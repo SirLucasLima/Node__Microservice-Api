@@ -1,7 +1,3 @@
-//npx prisma init --datasource-provider SQLite
-//npx prisma migrate dev
-//npx prisma studio (open DB interface navegator)
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -17,6 +13,7 @@ model Notification {
   content     String
   category    String
   readAt      DateTime?
+  canceledAt  DateTime?
   createdAt   DateTime  @default(now())
 
   @@index([recipientId])
